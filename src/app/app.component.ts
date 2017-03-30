@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  firstName : string;
+  lastName : string;
+  title: string;
+  ngOnInit() {
+    this.firstName = 'Kevin';
+    this.lastName = 'Pietersen';
+  }
+  getNameValues(firstName, lastName) {
+    this.title = `${firstName} ${lastName}`; 
+  }
 }
